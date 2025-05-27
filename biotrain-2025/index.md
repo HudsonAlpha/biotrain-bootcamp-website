@@ -4,6 +4,7 @@
 ## Info 
 
 **Webpage Updates**
+- 05/27/25: Ashlyn's slides added
 - 05/21/2025:
   - Deployed website for 2025.
 - Changes from last year
@@ -99,7 +100,7 @@ Please ensure you have the following software and data on the computer you inten
 
 ## Thursday, May 30, 2025:
 
-**8:15am - 8:45am** Ashlyn Anderson Computational Research Slides: 
+**8:15am - 8:45am** Ashlyn Anderson Computational Research Slides: [BioTrain-Intro-Comp_AGA.pptx](BioTrain-Intro-Comp_AGA.pptx)
 
 **8:45am - 10:15am**: Programming with R  
 *Ashlyn Anderson*
