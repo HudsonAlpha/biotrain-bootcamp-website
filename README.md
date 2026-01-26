@@ -1,0 +1,1 @@
+This repository was previously hosted at james-lawlor.github.io and was the biotrain bootcamp website where we posted slides and an overview of the computational biology workshop. It will probably need some tweaking to properly make it a functioning .github.io site again. 
