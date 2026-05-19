@@ -22,11 +22,12 @@ https://satijalab.org/seurat/articles/pbmc3k_tutorial
 
 Open this website and follow along during the tutorial.
 
-## Download the data
+## Download the Rmd and the data
 
 Download the PBMC tutorial data from:
 
 ```text
+https://github.com/HudsonAlpha/biotrain-bootcamp-website/blob/master/biotrain-2026/Demos/single%20cell/Seurat_tutorial.Rmd
 https://github.com/HudsonAlpha/biotrain-bootcamp-website/blob/master/biotrain-2026/Demos/single%20cell/pbmc3k_filtered_gene_bc_matrices.tar
 ```
 
