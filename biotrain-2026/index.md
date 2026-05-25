@@ -76,12 +76,12 @@ Maybe some R, if we have time
 **8:00 - 8:30**: Finish up work from Wednesday, R Review
 
 **8:30am - 9:30am**: GWAS Demo
-directory: [GWAS Demo](GWAS)  *Ashlyn Anderson*
+directory: [GWAS Demo](./Demos/GWAS)  *Ashlyn Anderson*
 
 **9:30am - 9:45am**: Break
 
 **9:45am - 10:45am**: Single Cell Demo
-directory: [Single Cell Demo](single cell)  *Ashlyn Anderson*
+directory: [Single Cell Demo](./Demos/single%20cell)  *Ashlyn Anderson*
 
 
 
