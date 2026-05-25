@@ -29,11 +29,10 @@ Course content adapted from 2018 Bootcamp organized by [Brittany Lasseigene, PhD
 
 **8:00am - 8:15am**: Computer set-up.
 
+### Setup
 [Detailed Windows Setup Instructions](#detailed-windows-setup-instructions)
 
 [Mac: Changing your shell to bash](#setting-up-bash-shell-on-mac)
-
-### Data Setup
 
 We will be generating data and folders in the workshop
 
@@ -75,18 +74,24 @@ Maybe some R, if we have time
 ##  Thursday, May 28, 2025:
 **8:00 - 8:30**: Finish up work from Wednesday, R Review
 
-**8:30am - 9:30am**: GWAS Demo
-directory: [GWAS Demo](./Demos/GWAS)  *Ashlyn Anderson*
+**8:30am - 9:15am**: GWAS Demo
+directory: [GWAS Demo](./Demos/GWAS)  *Ashlyn Anderson or Stephanie Felker*
 
-**9:30am - 9:45am**: Break
-
-**9:45am - 10:45am**: Single Cell Demo
+**9:15am - 10:00am**: Single Cell Demo
 directory: [Single Cell Demo](./Demos/single%20cell)  *Ashlyn Anderson*
 
+**10:00am - 10:15am**: Break
+
+**10:15am - 11:00am**: Dot Plot Demo
+directory: [Dot Plot Demo](./Demos/dotplot)  *LaramieL Aközbek*
+
+**11:00am - 11:45am**: Something Else Demo
+directory: [Something Demo](./Demos/)  *Renan Souza*
+
+**11:45-12:15**: Wrap up, time buffer
 
 
-
-
+##  Other Resources:
 Check these shell lessons out if you:
 * want to combine existing shell commands: [Pipes and Filters](https://swcarpentry.github.io/shell-novice/04-pipefilter.html)
 * perform the same action on many files in the shell: [Loops](https://swcarpentry.github.io/shell-novice/05-loop.html)
