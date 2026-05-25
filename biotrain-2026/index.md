@@ -67,12 +67,21 @@ Please ensure you have the following software and data on the computer you inten
 
 **11:30am - 12:15pm**: Working in the Terminal Keeping a Computational Lab Notebook 
 *Stephanie Felker*
+Maybe some R, if we have time
 
 **12:15pm**: End of Day 1
 
 
 ##  Thursday, May 28, 2025:
+**8:00 - 8:30**: Finish up work from Wednesday, R Review
 
+**8:30am - 9:30am**: GWAS Demo
+directory: [GWAS Demo](GWAS)  *Ashlyn Anderson*
+
+**9:30am - 9:45am**: Break
+
+**9:45am - 10:45am**: Single Cell Demo
+directory: [Single Cell Demo](single cell)  *Ashlyn Anderson*
 
 
 
