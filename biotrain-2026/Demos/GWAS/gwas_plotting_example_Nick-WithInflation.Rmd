@@ -5,39 +5,61 @@ output: pdf_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
 ```
 
-## R Markdown
+
 
 ```{r}
-# Load the necessary libraries
+install.packages("qqman")
+install.packages("data.table")
+
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("rtracklayer")
+BiocManager::install("GenomicFeatures")
+
+
+
 library(qqman)
 library(data.table)
 library(rtracklayer)
 library(GenomicRanges)
 library(GenomicFeatures)
+```
+
+
+# Load the data
+
+```{r}
 
 ### Edit below to the path on your computer
-file_path <- "~/Downloads/redlat_genotools_4-23-25-25_AMR_ad_GEMMA_gwas_sex_age_country.assoc_no-nan.txt"
+file_path <- "~/Downloads/redlat_GEMMA.txt"
 
 data <- fread(file_path)
 
 # Ensure the column names are as expected
 colnames(data) <- c("chr", "rs", "ps", "n_miss", "allele1", "allele0", "af", "beta", "se", "logl_H1", "l_remle", "l_mle", "p_wald", "p_lrt", "p_score")
 
+head(data)
+
+quantile(data$p_lrt)
+```
+
+
+# Overlap with genes to determine if 
+
+```{r}
 # Load the GTF file
 # Note the below file is available from: https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_46/gencode.v46.annotation.gtf.gz
 
 ### Edit the below to point to the local location on your machine
-gtf_file_path <- "~/Downloads/gencode.v46.annotation.gtf"
+gtf_file_path <- "~/Downloads/gencode.v46.annotation.gtf.gz"
 gtf <- rtracklayer::import(gtf_file_path)
 
-# Convert the GTF to a GRanges object for genes
-genes <- subset(gtf, type == "gene")
-genes_gr <- GRanges(seqnames = seqnames(genes),
-                    ranges = IRanges(start = start(genes), end = end(genes)),
-                    gene_id = genes$gene_id,
-                    gene_name = genes$gene_name)
+# Just take gene body
+genes_gr <- subset(gtf, type == "gene")
+
 
 # Convert numeric chr to standard labels
 data$chr_label <- as.character(data$chr)
@@ -63,6 +85,19 @@ overlaps <- findOverlaps(snps_gr, genes_gr)
 data$gene <- NA
 data$gene[queryHits(overlaps)] <- genes_gr$gene_name[subjectHits(overlaps)]
 
+
+
+
+head(data$gene)
+
+# what proportion of variants are intergenic?
+sum(is.na(data$gene))/nrow(data)
+```
+
+
+
+```{r}
+
 # Identify significant hits (e.g., p-value < 5e-8)
 significant_hits <- data[data$p_lrt < 5e-8]
 
@@ -80,11 +115,16 @@ lambda_gc <- median(chisq_clean) / qchisq(0.5, df = 1)
 lambda_gc_rounded <- round(lambda_gc, 3)
 
 
-jpeg("~/Downloads/redlat_genotools_4-23-25-25_AMR_ad_GEMMA_gwas_sex_age_country.assoc.jpg", width = 1200, height = 600)
+
+
+
+manhattan(data, chr = "chr", bp = "ps", snp = "gene", p = "p_lrt", main = "ReD-Lat AMR AD Standardized AF-0.005",
+          annotatePval = 5e-8, annotateTop = TRUE)
 
 
 manhattan(data, chr = "chr", bp = "ps", snp = "rs", p = "p_lrt", main = paste0("ReD-Lat AMR AD Standardized AF-0.005 (inflation = ", lambda_gc_rounded, ")"),
           annotatePval = 5e-8, annotateTop = TRUE, highlight = significant_hits$rs)
-
-
 ```
+
+
+
