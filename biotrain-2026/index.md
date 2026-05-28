@@ -86,7 +86,7 @@ directory: [Single Cell Demo](./Demos/single%20cell)  *Ashlyn Anderson*
 directory: [Dot Plot Demo](./Demos/dotplot)  *LaramieL Aközbek*
 
 **11:00am - 11:45am**: Something Else Demo
-directory: [Something Demo](./Demos/)  *Renan Souza*
+directory: [Plant Phenotype](./Demos/plant_phenotype)  *Renan Souza*
 
 **11:45-12:15**: Wrap up, time buffer
 
